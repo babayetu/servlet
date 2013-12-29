@@ -1,0 +1,24 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+	<servlet>
+       <servlet-name>ListenerTester</servlet-name>
+       <servlet-class>com.example.web.ListenerTester</servlet-class>
+   </servlet>
+   <servlet-mapping>
+       <servlet-name>ListenerTester</servlet-name>
+       <url-pattern>/listen.do</url-pattern>
+   </servlet-mapping>
+	<context-param>
+		<param-name>breed</param-name>
+		<param-value>GreatDane</param-value>
+	</context-param>
+	<listener>
+		<listener-class>
+			com.example.web.MyServletContextListener
+		</listener-class>
+	</listener>
+</web-app>
